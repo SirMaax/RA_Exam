@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>pruefung_ra_ws2122</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><h1><a name="prüfung-rechnerarchitektur-ws-202122" class="md-header-anchor"></a><span>Prüfung Rechnerarchitektur WS 2021/22</span></h1><p><span>Im Wintersemester 2021/2022 wird die Prüfungsleistung für das Modul Rechnerarchitektur nicht durch eine Klausur erbracht, sondern in Form einer Programmieraufgabe mit schriftlicher Ausarbeitung (Ausarbeitung im Umfang von bis zu 4 A4-Seiten).</span></p><p><strong><span>Bitte lesen Sie sich diese Anleitung zur Prüfungsleistung gründlich durch!</span></strong></p><p><span>Bei Fragen schreiben Sie bitte eine Email an </span><code>moeller@techfak.de</code></p><h2><a name="aufgabenstellung" class="md-header-anchor"></a><span>Aufgabenstellung</span></h2><p><span>Realisieren Sie ein Programm zur Sortierung eines Datensatzes mithilfe des </span><strong><span>bitweisen LSB-Radix-Sortierverfahrens in Assembler für Intel 64-Bit-Prozessoren (x86-64).</span></strong></p><p><span>Es liegt ein </span><strong><span>Datensatz</span></strong><span> vor, dessen Elemente jeweils aus einem Key (dem Schlüssel, nach dem sortiert wird) und einem Payload (eine zusätzliche Information, bspw. ein Index, die im Sortiervorgang stets gemeinsam mit dem Key transportiert wird) bestehen. Der Key ist eine vorzeichenbehaftete ganze Zahl in Zweierkomplement-Kodierung (2K-Zahl) mit 4 Bytes. Der Payload ist eine vorzeichenlose ganze Zahl in Dual-Kodierung (Dualzahl) mit 4 Bytes. Der Key liegt im Speicher vor dem Payload. Key und Payload schließen im Speicher unmittelbar aneinander an. Aufeinanderfolgende Elemente schließen im Speicher ebenfalls unmittelbar aneinander an.</span></p><p><span>Dieser Datensatz soll mit </span><strong><span>bitweisem LSB-Radix-Sort</span></strong><span> sortiert werden, wobei eine Sortierung sowohl in aufsteigender als auch in absteigender Reihenfolge möglich sein soll. Beim bitweisen LSB-Radix-Sort (auch &quot;binäres LSD-Radix-Sort&quot;, LSD = &quot;least significant digit&quot;) wird der Datensatz in jedem Durchgang vollständig durchmustert und dabei nach einem bestimmten Bit des Keys sortiert. Nach einem Durchgang liegen bspw. alle Elemente, bei denen das betrachtete Bit des Keys 0 ist, vor allen Elementen, bei denen das betrachtete Bit des Keys 1 ist (bzw. umgekehrt je nach Sortierrichtung). Der erste Durchgang sortiert die Daten nach dem niederwertigsten (&quot;least significant&quot;) Bit (LSB) des Keys. In den folgenden Durchgängen werden die Bits in aufsteigender Reihenfolge der Signifikanz behandelt. Der letzte Durchgang sortiert die Daten nach dem höchstwertigen (&quot;most significant&quot;) Bit (MSB) des Keys. In jedem Durchgang wird der </span><em><span>gesamte</span></em><span> Datensatz durchmustert, es erfolgt also </span><em><span>keine</span></em><span> Aufteilung in zwei Gruppen, die dann separat behandelt werden. Das Verfahren funktioniert allerdings nur unter der </span><strong><span>Voraussetzung, dass Elemente mit gleichem Key-Bit ihre Reihenfolge untereinander in einem Durchgang nicht verändern</span></strong><span>.</span></p><p><span>Ihr Programm soll in der Lage sein, den Datensatz sowohl aufwärts als auch abwärts anhand des Keys zu sortieren. Für die Sortierung ist der </span><strong><span>Wert des Keys</span></strong><span> entscheidend, nicht dessen Bitfolge. Es ist also Vorzeichen und Betrag der Zweierkomplement-Zahl zu berücksichtigen (bitte finden Sie dafür eine effiziente Lösung).</span></p><p><span>Bitte beachten Sie bei der Implementation, dass es effizienter sein kann, wenn schwer vorhersagbare Sprünge (&quot;branch prediction&quot;) eliminiert und bspw. durch bedingte Transportbefehle (</span><code>cmov*</code><span>) ersetzt werden.</span></p><h2><a name="anmeldung-und-abgabe" class="md-header-anchor"></a><span>Anmeldung und Abgabe</span></h2><p><span>Es ist keine Anmeldung erforderlich.</span></p><p><span>Die Abgabe muss bis zum </span><strong><span>Sonntag, 6. März 2022, 23:59</span></strong><span> erfolgen. Eine verspätete Abgabe gilt als Nichtteilnahme. Die Deadline ist strikt. Die Abgabe erfolgt über die &quot;E-Prüfung&quot; im Lernraum der Rechnerarchitektur-Vorlesung (Zugang via eKVV). Bitte kennzeichnen Sie Programmdatei und Ausarbeitung mit Ihrem Account-Namen an der Technischen Fakultät. Für Erika Mustermann wäre dies z.B. </span><code>emustermann</code><span>. Die Programmdatei muss in diesem Beispiel den Dateinamen </span><code>lsbsort_emustermann.asm</code><span>, die Ausarbeitung den Dateinamen </span><code>ausarbeitung_emustermann.pdf</code><span> haben. Achten Sie bitte auf die korrekte Angabe des Account-Namens, da wir diesen ggf. auch für die Email-Kommunikation verwenden. Die bereitgestellte Datei </span><code>support_lsbsort.asm</code><span> wird nicht mit abgegeben. Weitere Quellcode-Dateien können nicht mit abgegeben werden. Sie können Ihre Abgabe bis zur Deadline beliebig oft verändern. Bitte beachten Sie die Hinweise in der bereitgestellten Anleitung </span><code>Anleitung_E-Pruefung_RA.PDF</code><span>. </span><em><span>Hinweis: Bitte testen Sie den Abgabevorgang deutlich vor der Deadline.</span></em></p><h2><a name="wiederholung" class="md-header-anchor"></a><span>Wiederholung</span></h2><p><span>Eine einmalige Wiederholung (2. Versuch) im Wintersemester 2021/2022 kann zur Notenverbesserung in Anspruch genommen werden und ist </span><strong><span>nur bei Teilnahme am 1. Versuch</span></strong><span> möglich, da dieselbe Aufgabe in einem verkürzten Zeitraum bearbeitet wird. Bitte beachten Sie, dass die Leistung des 1. Versuchs auch bei einer Wiederholung der Prüfung eingetragen wird.</span></p><p><span>Die Wiederholung erfolgt durch </span><strong><span>Überarbeitung von Programm und Ausarbeitung mit demselben Thema</span></strong><span>. Für die Überarbeitung wird eine </span><strong><span>Frist von 2 Wochen</span></strong><span> nach der Mitteilung der Note eingeräumt.</span></p><p><span>In nachfolgenden Semestern gilt die dann festgelegte Prüfungsform (in der Regel eine Klausur).</span></p><h2><a name="programm" class="md-header-anchor"></a><span>Programm</span></h2><p><span>Fügen Sie Ihren Programmcode in das </span><strong><span>vorgegebene Rahmenprogramm</span></strong><span> </span><code>lsbsort_emustermann.asm</code><span> ein (s.u.). Dieses erzeugt in Zusammenspiel mit dem Code in der bereitgestellten Datei </span><code>support_lsbsort.asm</code><span> zunächst zufällige Daten nach den Vorgaben der Definitionen </span><code>ELEMS</code><span> (Anzahl der Elemente) und </span><code>SEED</code><span> (Initialwert Zufallszahlengenerator) in </span><code>support_lsbsort.asm</code><span>. Dann wird Ihr Sortier-Unterprogramm (Marke </span><code>lsbsort</code><span>) aufgerufen. Dabei legt eine weitere Definition </span><code>UP</code><span>  in </span><code>support_lsbsort.asm</code><span> die Sortierrichtung fest (1 = aufwärts,  0 = abwärts), die Ihr Programm realisieren soll. Im vorgegebenen Code des Unterprogramms werden die Daten hier lediglich kopiert; bitte ersetzen Sie diesen Code durch Ihre Implementation des Sortierverfahrens. Ist das Symbol </span><code>STORE</code><span> definiert, wird der sortierte Datensatz unter dem Namen </span><code>lsb_sorted.dat</code><span> abgespeichert. Abschließend erfolgt eine Überprüfung, ob die Daten tatsächlich sortiert sind; dies wird durch eine Ausgabe auf der Standardausgabe angezeigt. </span></p><p><span>Die bereitgestellte Datei </span><code>support_lsbsort.asm</code><span> wird nicht mit abgegeben. Bitte legen Sie auch </span><strong><span>keine weiteren Quellcode-Dateien</span></strong><span> an; diese können nicht abgegeben werden, da nur zwei Dokumente (eine Assembler-Datei und eine PDF-Datei mit der Ausarbeitung) elektronisch eingereicht werden können. Kann Ihr Programm wegen fehlender weiterer Quellcode-Dateien nicht assembliert werden, wird es als nicht funktionstüchtig bewertet (s.u.).</span></p><p><span>Gefordert ist ein Assemblerprogramm für </span><strong><span>Intel x86-64-Prozessoren im Intel-Syntax</span></strong><span> (nicht IA-32, nicht AT&amp;T-Syntax). Ihr Programm muss mit der vorgegebenen Version des Assemblers </span><code>nasm</code><span> assemblierbar sein (s.u.). Es ist nicht gestattet, Assemberprogramme oder Teile davon durch Compilieren aus Hochsprachen zu erzeugen (Betrugsversuch, s.u.). Es ist nicht gestattet, Bibliotheken einzubinden.</span></p><p><span>Das Programm soll nur </span><strong><span>auf einer einzigen CPU (bzw. Core)</span></strong><span> laufen. Vermeiden Sie also eine Parallelisierung auf mehreren CPUs / Cores.</span></p><p><strong><span>Kommentieren</span></strong><span> Sie Ihr Programm ausgiebig </span><strong><span>in deutscher Sprache</span></strong><span> (s.u.). Geben Sie auch </span><strong><span>Kommentare für jedes Unterprogramm</span></strong><span> an, die dessen Eingabe- und Ausgabe-Parameter, genutzte &quot;globale&quot; Parameter und die von der Funktion modifizierten (&quot;zerstörten&quot;) Register angeben. Parameter können dabei Speicherbereiche oder Register sein.</span></p><p><span>Bitte nutzen Sie </span><strong><span>keine bedingte Einbindung</span></strong><span> von Code (z.B. </span><code>%if</code><span> oder </span><code>%ifdef</code><span>). Bei der Zählung der Instruktionen (s.u.) werden solche Konstrukte nicht berücksichtigt; es würden also auch nicht eingebundene Instruktionen mitgezählt.</span></p><p><span>Bitte beachten Sie: Ihr Programm muss den </span><strong><span>Vektor </span><code>data</code><span> unverändert lassen</span></strong><span> und die </span><strong><span>sortierten Daten im  Vektor </span><code>sorted_data</code></strong><span> ablegen!</span></p><p><span>Bitte behalten Sie die Kodierung des Quellcodes im UTF-8-Unicode-Format bei.</span></p><h2><a name="ausarbeitung" class="md-header-anchor"></a><span>Ausarbeitung</span></h2><h3><a name="format" class="md-header-anchor"></a><span>Format</span></h3><p><span>Auf einer vorangestellten Titelseite geben Sie bitte &quot;Ausarbeitung  Rechnerarchitektur Wintersemester 2021/22&quot; mit dem Titel &quot;Assembler-Implementierung eines bitweisen LSB-Radix-Sort&quot; sowie </span><strong><span>Ihren Namen, Vornamen, Studiengang und Ihre Matrikelnummer</span></strong><span> an. Fügen Sie darunter bitte folgenden Text ein: </span></p><blockquote><p><span>&quot;Hiermit erkläre ich, dass ich das Programm und die vorliegende Ausarbeitung selbstständig verfasst habe. Ich habe keine anderen Quellen als die angegebenen benutzt und habe die Stellen in Programm und in der Ausarbeitung, die anderen Quellen entnommen wurden, in jedem Fall unter Angabe der Quelle als Entlehnung kenntlich gemacht. Diese Erklärung gilt auch ohne meine Unterschrift, sobald ich das Programm und die Ausarbeitung über die E-Prüfung der Vorlesung Rechnerarchitektur im Lernraum des eKVV an der Universität Bielefeld und unter Angabe meiner Matrikelnummer in der Ausarbeitung eingereicht habe.&quot;</span></p></blockquote><p><span>Die eigentliche Ausarbeitung umfasst </span><strong><em><span>bis zu</span></em><span> 4 A4-Seiten</span></strong><span> mit einer Textbreite von 16 cm und einer Texthöhe von 23 cm. Der Text ist im Zeilenabstand &quot;ein-einhalb-zeilig&quot; zu formatieren. Als Schriftart wählen Sie dabei bitte Times-Roman in der Größe 12 pt. </span></p><p><span>Bitte beachten Sie: Bei Abgaben, welche die Seitenbegrenzung überschreiten, wird nur der Teil bis zum Erreichen der maximalen Seitenzahl bewertet. Bei Abgaben, die Zeilenabstand und / oder Schriftgröße verringern, wird nur der Teil bis zu einer entsprechenden Wortzahl bewertet. Das Erreichen der maximalen Seitenzahl ist nicht erforderlich (bewertet wird die inhaltliche Vollständigkeit, nicht der Umfang).</span></p><p><span>Die </span><strong><span>Liste Ihrer Quellen</span></strong><span> (Literatur, Webseiten etc.) geben Sie bitte nachfolgend zum eigentlichen Text an, beginnend auf einer neuen Seite.</span></p><p><span>Die Titelseite und die Seite(n) mit der Liste der Quellen werden nicht bei der Seitenzählung berücksichtigt.</span></p><p><span>Das eingereichte </span><strong><span>PDF-Dokument muss ein Format aufweisen, aus dem der Text extrahiert werden kann</span></strong><span> (für den Plagiatstest). Vermeiden Sie deshalb bitte Rastergrafiken für Text und verschlüsselte Formate. Die Abgabe wird als nicht bestanden bewertet, wenn auf einmalige Nachfrage per Email keine für die Plagiatsprüfung geeignete Fassung zur Verfügung gestellt wird. </span><em><span>Hinweis: Sie können die Extrahierbarkeit von Text z.B. mit dem Linux-Tool </span><code>pdftotext</code><span> testen.</span></em></p><p><span>Sie können das bereitgestellte </span><strong><span>LaTeX-Vorlage</span></strong><span> </span><code>ausarbeitung_emustermann.tex</code><span> verwenden. Diese enthält bereits einen Vorschlag für eine inhaltliche Gliederung nach den untenstehenden Angaben. Behalten Sie diese bitte möglichst bei.</span></p><h3><a name="inhalt" class="md-header-anchor"></a><span>Inhalt</span></h3><p><span>Bitte </span><em><span>vermeiden</span></em><span> Sie eine Einführung, in der Sie die Aufgabenstellung rekapitulieren oder grundlegendes Wissen zu Sortierverfahren, zur Assemblerprogrammierung oder zur Rechnerarchitektur wiedergeben. Folgen Sie bitte möglichst der vorgegebenen Gliederung in der LaTeX-Vorlage.</span></p><p><span>Erklären Sie Ihre Implementation des bitweisen LSB-Radix-Sort. Gehen Sie dabei auch auf folgende Aspekte Ihrer Implementation ein:</span></p><ul><li><span>Implementation des gesamten Sortiervorgangs</span></li><li><span>Implementation des Sortierdurchgangs für ein Bit</span></li><li><span>Lösung für das Beibehalten der Reihenfolge von Elementen mit gleichen Key-Bits in jedem Durchgang</span></li><li><span>Lösung für die Behandlung von Vorzeichen und Betrag der Keys (effiziente Lösung gesucht!)</span></li><li><span>Lösung für die Prüfung einzelner Bits im Datenwort</span></li><li><span>Lösung für das Sortieren in beide Richtungen</span></li><li><span>Vergleich der Laufzeit (&quot;user&quot;-Anteil ohne &quot;system&quot;-Anteil) Ihres Verfahrens mit der des bereitgestellten Vergleichsprogramms </span><code>stlsort</code><span> (s.u.) für verschiedene Größen des Datensatzes</span></li><li><span>Schwachstellen und Verbesserungsmöglichkeiten.</span></li></ul><h2><a name="hinweise-zur-einzelleistung-und-zu-betrugsversuchen" class="md-header-anchor"></a><span>Hinweise zur Einzelleistung und zu Betrugsversuchen</span></h2><p><span>Die Programmieraufgabe mit Ausarbeitung ist ein Ersatz für eine Klausur. In einer Klausur ist sichergestellt, dass die Leistung als </span><strong><span>Einzelleistung</span></strong><span> erbracht wird. Derselbe Maßstab gilt auch für die Programmieraufgabe mit Ausarbeitung. Eine </span><strong><span>Zusammenarbeit mit anderen Personen in jeglicher Form gilt deshalb als Betrugsversuch</span></strong><span>. Für Programmdatei und Ausarbeitung wird ein elektronischer Plagiatstest durchgeführt. Dadurch aufgedeckte </span><strong><span>Betrugsversuche werden geahndet</span></strong><span>: Gespräch mit dem Modulverantwortlichen, ggf. Meldung ans Prüfungsamt mit Vermerk, Eintragung der Leistung als &quot;nicht bestanden&quot;, Ausschluss vom zweiten Versuch im WS 2021/2022, Schreiben vom Dekan, mögliche Exmatrikulation bei weiteren (vorherigen oder nachfolgenden) Betrugsversuchen. </span></p><p><span>Wir recherchieren im Vorfeld mögliche </span><strong><span>Quellen im Internet</span></strong><span>. Bitte denken Sie daran, dass eventuell auch andere TeilnehmerInnen dieselben Quellen verwenden. Auch wenn wir diese Quellen nicht kennen sollten, würde dadurch ein Betrugsversuch aufgedeckt.</span></p><p><span>Bitte wenden Sie sich mit Fragen zur Aufgabenstellung oder bei technischen Fragen nur an den Veranstalter (Email an </span><code>moeller@techfak.de</code><span>), nicht an KommilitonInnen oder an TutorInnen.</span></p><p><span>Sowohl im Quellcode Ihres Programms als auch in Ihrer Ausarbeitung müssen </span><strong><span>alle verwendeten Quellen gekennzeichnet</span></strong><span> sein. Im </span><strong><span>Quellcode</span></strong><span> sind alle Programmteile, die aus anderen Quellen (bspw. Hilfeseiten im Internet) stammen, zu kennzeichnen. Diese Teile gelten allerdings nicht als selbst erbrachte Leistung; die erreichte Punktzahl wird entsprechend reduziert. Wird die Quelle nicht angegeben, liegt ein Betrugsversuch vor. Wenn Sie selbst Teile Ihres Programms öffentlich im Internet zugänglich machen, werten wir Ihre Abgabe als Plagiat der Internet-Quelle (die Internet-Quelle gilt dabei als nicht selbst verfasst, auch wenn sie unter Ihrem Klarnamen veröffentlicht wurde). In der </span><strong><span>Ausarbeitung</span></strong><span> müssen wörtliche Zitate (auch Übersetzungen) gekennzeichnet sein. Bei zu großem Anteil (gekennzeichneter) wörtlicher Übernahmen gelten diese Teile der Ausarbeitung nicht mehr als selbst erbrachte Leistung; die erreichte Punktzahl wird entsprechend reduziert.</span></p><p><span>Es gilt als </span><strong><span>Betrugsversuch, wenn das Assemblerprogramm durch Compilieren aus einer Hochsprache erzeugt wurde</span></strong><span>.</span></p><h2><a name="bewertungskriterien" class="md-header-anchor"></a><span>Bewertungskriterien</span></h2><p><span>Die Leistung ist benotet. Abweichungen von dieser Vorgabe sind mit dem Prüfungsamt zu klären.</span></p><p><strong><span>Die maximale erreichbare Punktzahl ist 100.</span></strong><span> Die Bestehensgrenze ist 50% (50 Punkte). 50 Punkte werden aus der Bewertung des Programms ermittelt, 50 Punkte aus der Bewertung der Ausarbeitung inkl. Kommentierung des Programms. Da Ausarbeitung und Programm in engem Bezug stehen, kann die Leistung nur bestanden werden, wenn für das </span><strong><span>Programm mindestens 15 Punkte</span></strong><span> </span><em><span>und</span></em><span> für die </span><strong><span>Ausarbeitung mindestens 15 Punkte</span></strong><span> erreicht werden; zudem müssen in der </span><strong><span>Summe mindestens 50 Punkte</span></strong><span> erreicht werden.</span></p><h3><a name="bewertung-des-programms" class="md-header-anchor"></a><span>Bewertung des Programms</span></h3><p><span>Die Bewertung des Programms erfolgt mit maximal 50 Punkten. Es müssen mindestens 15 Punkte erreicht werden. Beim Erwerb von Zusatzpunkten (s.u.) kann die maximale Punktzahl überschritten werden. </span></p><p><span>Es wird zunächst geprüft, ob Ihr Programm die </span><strong><span>Aufgabenstellung erfüllt</span></strong><span>, d.h. tatsächlich bitweises LSB-Radix-Sort in Assembler für Intel-x86-64-Prozessoren und im Intel-Syntax implementiert wurde. Ist dies nicht der Fall, gilt die Aufgabe als nicht erfüllt und die Prüfung damit als nicht bestanden. Bitte beachten Sie, dass auch Mischformen mit anderen Sortierverfahren oder Varianten (z.B. bitweises </span><em><span>MSB</span></em><span>-Radix-Sort oder </span><em><span>byteweises</span></em><span> LSB-Radix-Sort) nicht akzeptiert werden. Ansonsten erfolgt die Bewertung wie folgt:</span></p><p><strong><span>Funktionstüchtigkeit des Programms (20 Punkte)</span></strong><span>: Ihre Abgabe wird von uns mit dem &quot;Netwide Assembler&quot; </span><code>nasm</code><span> in der Version auf den GZI-Maschinen (2.13.02) zu einer ausführbaren Datei assembliert. Dazu verwenden wir eine Version von </span><code>support_lsbsort.asm</code><span> mit anderen Werten der Definitionen und zusätzlichem Testcode. Ein nicht assemblierbares Programm wird nicht weiter untersucht und gilt als &quot;nicht funktionstüchtig&quot; (0 Punkte). </span><em><span>Hinweis: Bitte testen Sie deshalb vor Abgabe auf einer GZI-Maschine, ob Ihr Programm mit diesem Assembler assemblierbar ist!</span></em><span> Ein assemblierbares Programm wird von uns mehreren Tests mit unterschiedlichen Werten für die Definitionen </span><code>ELEMS</code><span>, </span><code>SEED</code><span> und </span><code>UP</code><span> getestet (s.o.). Der Anteil der Testläufe, bei denen Ihr Programm eine korrekte Sortierung erzeugt, bestimmt den Grad der Funktionstüchtigkeit und damit die zugewiesene Punktzahl (bspw. funktionstüchtig in der Hälfte der Fälle: 10 Punkte). </span><em><span>Hinweis: Testen Sie deshalb Ihr Programm ausführlich mit unterschiedlichen Werten für die genannten Definitionen</span></em><span>.</span></p><p><strong><span>Anzahl der Assembler-Instruktionen (15 Punkte):</span></strong><span> Bewertet wird die Anzahl der benötigten Assembler-Instruktionen. Bitte beachten Sie, dass bei der automatischen Zählung Konstrukte für die bedingte Einbindung (z.B. </span><code>%ifdef</code><span>) nicht berücksichtigt werden. Wenn Sie also bspw. separaten Code für die beiden Sortierrichtungen angeben, werden die Instruktionen in beiden Teilen gezählt. Unsere Musterlösung benötigt 40 Instruktionen.  Bewertungsskala: bis zu 50 Instruktionen 15 Punkte, bis zu 70 Instruktionen 10 Punkte, bis zu 100 Instruktionen 5 Punkte, sonst 0 Punkte. Werden weniger als 40 Instruktionen benötigt, werden 5 zusätzliche Punkte vergeben. </span><em><span>Hinweis: Entfernen Sie unnötige Instruktionen. Ihr Unterprogramm </span><code>lsbsort</code><span> muss z.B. keine Register retten und restaurieren.</span></em></p><p><strong><span>Laufzeit Ihres Programms (15 Punkte):</span></strong><span> Die von uns erarbeitete Musterlösung hat für 10 Mio. Elemente eine ähnliche Laufzeit wie das Vergleichsprogramm </span><code>stlsort</code><span> (siehe unten). Die Laufzeit Ihres Programms im Vergleich zu </span><code>stlsort</code><span> fließt in die Bewertung ein. Sie können die Laufzeit Ihres Programms ermitteln, indem Sie beim Start </span><code>time</code><span> auf der Kommandozeile voranstellen. Relevant ist dabei die ausgegebene &quot;User&quot;-Zeit. Bewertungsskala: bis zur 2-fachen Laufzeit im Vergleich zu </span><code>stlsort</code><span> 15 Punkte, bis zur 3-fachen Laufzeit 10 Punkte, bis zur 5-fachen Laufzeit 5 Punkte, sonst 0 Punkte.  Ist Ihr Programm schneller als </span><code>stlsort</code><span>, werden 5 zusätzliche Punkte vergeben. Die relativen Laufzeiten (Radix-Sort zu </span><code>stlsort</code><span>) werden bei der Bewertung über mehrere Messungen gemittelt. Ein nicht assemblierbares oder nicht zumindest bei einem Laufzeittest funktionstüchtiges Programm erhält hierbei 0 Punkte.</span></p><h3><a name="bewertung-der-ausarbeitung-und-kommentierung" class="md-header-anchor"></a><span>Bewertung der Ausarbeitung und Kommentierung</span></h3><p><span>Die Bewertung der Ausarbeitung und Kommentierung erfolgt mit maximal 50 Punkten. Es müssen mindestens 15 Punkte erreicht werden.</span></p><p><strong><span>Ausarbeitung in deutscher Sprache (40 Punkte):</span></strong><span> Die Ausarbeitung ist in deutscher Sprache vorzulegen (zu Ausnahmen s.u.). Bewertet wird die inhaltliche Korrektheit (u.a. auch Übereinstimmung mit der Implementation), die Vollständigkeit, die Verständlichkeit der Darstellung sowie die Präzision und Konsistenz der Formulierungen. Bitte achten Sie auf eine verständliche Beschreibung. Wenn z.B. Register </span><code>r12</code><span> als Zeiger auf das nächste zu sortierende Element verwendet wird, dann führen Sie dies z.B. als &quot;Quelladresse (hier Register </span><code>r12</code><span>)&quot; ein und nehmen Sie in der folgenden Beschreibung jeweils auf die &quot;Quelladresse&quot; Bezug statt auf </span><code>r12</code><span>. </span><em><span>Hinweis: Bitte verwenden Sie die Rechtschreibprüfung Ihres Editors und lesen Sie Ihre Ausarbeitung vor der Abgabe nochmals gründlich durch.</span></em></p><p><strong><span>Kommentierung des Programms in deutscher Sprache (10 Punkte):</span></strong><span> Bewertet wird, wie ausführlich Ihr Programm kommentiert wurde. Dabei muss jede Programmzeile (Instruktion) mit einem verständlichen Kommentar in deutscher Sprache (zu Ausnahmen s.u.) versehen sein; Ausnahmen sind nur offensichtliche Befehlsabfolgen wie bspw. </span><code>push</code><span>-/</span><code>pop</code><span>-Sequenzen am Anfang und Ende von Unterprogrammen. Bitte vermeiden Sie dabei eine Beschreibung der Assembleranweisung (z.B. </span><code>inc rdx ; erhöhe Register rdx um 1</code><span>), sondern erläutern Sie mit dem Kommentar Ihren Algorithmus (z.B. </span><code>inc rdx ; Adresse des nächsten Bytes im Eingabepuffer</code><span>). Verwenden Sie möglichst dieselben Bezeichnungen (z.B. &quot;Quelladresse&quot;, s.o.) wie in der Ausarbeitung.</span></p><p><em><span>Hinweis: Sowohl die Ausarbeitung als auch die Kommentierung wird in deutscher Sprache eingefordert, um einfacher Bezüge zwischen den Kommentaren und der Beschreibung Ihres Verfahrens in der Ausarbeitung herstellen zu können. In begründeten Ausnahmefällen kann beides in Englisch erfolgen; dies ist aber vor Beginn der Bearbeitung mit dem Prüfenden zu klären.</span></em></p><h2><a name="bereitgestellte-materialien" class="md-header-anchor"></a><span>Bereitgestellte Materialien</span></h2><p><span>Es werden folgende Textdokumente, Programme und Skripte (für das Betriebssystem Linux) auf der Webseite der Veranstaltung</span></p><p><a href='https://www.ti.uni-bielefeld.de/html/teaching/WS2122/techinf1/index.html' target='_blank' class='url'>https://www.ti.uni-bielefeld.de/html/teaching/WS2122/techinf1/index.html</a></p><p><span>bereitgestellt:</span></p><ul><li><p><code>Anleitung_E-Pruefung_RA.PDF</code><span>: Anleitung für die E-Prüfung.</span></p></li><li><p><code>ausarbeitung_emustermann.tex</code><span> </span><strong><span>(bitte Account-Namen im Dateinamen sowie Angaben zu Ihrer Person in der Datei vor der Abgabe anpassen)</span></strong><span>: Latex-Vorlage für die Ausarbeitung. Die daraus erzeugte PDF-Datei liegt ebenfalls bei.</span></p></li><li><p><code>lsbsort_emustermann.asm</code><span> (</span><strong><span>bitte Account-Namen im Dateinamen sowie Angaben zu Ihrer Person in der Datei vor der Abgabe anpassen</span></strong><span>): Rahmen für Ihr Assembler-Programm. Bitte fügen Sie Ihre Unterprogramme und deren Aufruf im gekennzeichneten Bereich (Marke </span><code>lsbsort</code><span>) ein. Bitte lassen Sie die Einbindung von </span><code>support_lsbsort.asm</code><span> unverändert.</span></p><p><span>In der bereitgestellten Form erzeugt das Programm einen Datensatz mit Zufallszahlen je nach den Werten der Definitionen von </span><code>ELEMS</code><span> und </span><code>SEED</code><span>, ruft das Sortier-Unterprogramm auf (Marke </span><code>lsbsort</code><span>, gewünschte Sortierrichtung nach Definition </span><code>UP</code><span>), schreibt die sortierten Daten in die Ausgabedatei </span><code>lsb_sorted.dat</code><span> und prüft, ob die Sortierung korrekt war (Ausgabe auf der Standardausgabe). Der Aufruf der ausführbaren Datei erfolgt ohne Kommandozeilen-Parameter.</span></p></li><li><p><code>support_lsbsort.asm</code><span>: Enthält Funktionen zum Erzeugen der Daten, für Systemrufe und zur Überprüfung auf Sortiertheit sowie das Hauptprogramm, aus dem Ihr Unterprogramm </span><code>lsbsort</code><span> aufgerufen wird. Diese Datei wird nicht mit abgegeben. Sie dürfen nur die Werte der Definitionen ändern (s.o.). </span><em><span>Hinweis: Prüfen Sie vor Abgabe von </span><code>lsbsort_emustermann.asm</code><span> nochmals, ob das Programm mit der unveränderten Datei </span><code>support_lsbsort.asm</code><span> assemblierbar und funktionstüchtig ist.</span></em></p></li><li><p><code>Makefile</code><span>: einfaches Makefile zum Assemblieren Ihrer Lösung und zum Compilieren der Hilfsprogramme </span><code>stlsort</code><span> und </span><code>prtdata</code><span>. Der Aufruf erfolgt auf der Kommandozeile wie folgt: </span></p><ul><li><code>make lsbsort_emustermann</code><span>: Erzeugt eine ausführbare Datei mit demselben Rumpfnamen wie die Quelldatei (</span><code>lsbsort_emustermann.asm</code><span>). Benötigt den Assembler </span><code>nasm</code><span>.</span></li><li><code>make stlsort</code><span>: Erzeugt eine ausführbare Daten </span><code>stlsort</code><span> aus </span><code>stlsort.C</code><span>. Benötigt den C++-Compiler </span><code>g++</code><span>.</span></li><li><code>make prtdata</code><span>: Erzeugt eine ausführbare Datei </span><code>prtdata</code><span> aus </span><code>prtdata.c</code><span>. Benötigt den C-Compiler </span><code>gcc</code><span>.</span></li></ul><p><em><span>Hinweis: Vorgesehen ist die Verwendung des Makefiles und der Aufruf von </span><code>make</code><span> von der Kommandozeile. Bei Einsatz einer Entwicklungsumgebung können wir keine Unterstützung leisten. Sie können die Entwicklung auf einem der GZI-Rechner durchführen, falls auf Ihrem eigenen Rechner die benötigten Programme nicht installiert bzw. nicht installierbar sind.</span></em><span> </span></p></li><li><p><code>prtdata.c</code><span>: C-Programm zum Anzeigen von Ausgabedateien. Das Programm zeigt jeweils den Index, den Wert des Keys (dezimal), das Bitmuster des Keys (hexadezimal) sowie den Payload (hexadezimal) jedes Elements an. Aufruf mit Angabe des Dateinamens, z.B.: </span><code>prtdata lsb_sorted.dat</code><span> oder </span><code>prtdata stl_sorted.dat</code><span>.</span></p></li><li><p><code>stlsort.C</code><span>: C++-Programm zum Sortieren einer Datei mithilfe der Funktion </span><code>std::sort()</code><span> aus der C++ Standard Template Library (STL). </span><code>stlsort</code><span> weist ebenfalls Definitionen für </span><code>ELEMS</code><span>, </span><code>SEED</code><span> und </span><code>UP</code><span> auf, die entsprechend angepasst werden müssen. Der Aufruf erfolgt ohne Kommandozeilen-Parameter. Es wird die Ausgabedatei </span><code>stl_sorted.dat</code><span> erzeugt (falls das Symbol </span><code>STORE</code><span> definiert ist). Bitte beachten Sie, dass Elemente mit gleichen Keys anders sortiert sein können als bei bitweisem LSB-Radix-Sort.</span></p></li></ul><h2><a name="wichtiger-hinweis-zur-arbeit-im-gzi" class="md-header-anchor"></a><span>Wichtiger Hinweis zur Arbeit im GZI</span></h2><p><span>Die erzeugten Dateien mit den sortierten Daten können sehr groß sein (z.B. 100 Mio. Elemente mit je 8 Bytes: fast 1 GByte), um Laufzeiten im Sekundenbereich zu realisieren. Bitte erzeugen Sie diese Dateien nur temporär und löschen Sie diese nach Benutzung wieder aus dem Dateisystem. Sie können das Abspeichern durch Auskommentieren der Definition von </span><code>STORE</code><span> unterbinden. Alternativ können Sie die Dateien auch im Verzeichnis </span><code>/tmp</code><span> ablegen. Dort werden sie beim täglichen Neustart der GZI-Maschinen gelöscht.</span></p></div>
+</body>
+</html>

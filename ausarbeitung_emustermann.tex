@@ -1,0 +1,187 @@
+% Hinweise:
+% - Dateinamen anpassen!
+% - Name, Vorname, Studiengang, Matrikelnummer anpassen!
+% - Hinweis zu Umlauten beachten (s.u.)!
+% - Spellchecker verwenden!
+% - PDF erzeugen: pdflatex ausarbeitung_emustermann.tex
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{anysize}
+\usepackage[onehalfspacing]{setspace}
+% LRTB
+%\marginsize{3.0cm}{3.0cm}{2.0cm}{2.0cm}
+\usepackage[german,english]{babel}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{layouts}
+\usepackage{url}
+\begin{document}
+\selectlanguage{german}
+\newcommand{\3}{\ss}
+
+\begin{center}
+  \noindent{\large\bf%
+    Ausarbeitung Rechnerarchitektur Wintersemester 2021/22}\\[1cm]
+  \noindent{\Large\bf%
+    Assembler-Implementierung eines bitweisen LSB-Radix-Sort}\\[3cm]
+\end{center}
+
+\noindent{\bf Name:} Mustermann\\
+
+\noindent{\bf Vorname:} Erika\\
+
+\noindent{\bf Studiengang:} Angewandte Scholastik\\
+
+\noindent{\bf Matrikelnummer:} 0123456789\\[3cm]
+
+\noindent Hiermit erkläre ich, dass ich das Programm und die
+vorliegende Ausarbeitung selbstständig verfasst habe. Ich habe keine
+anderen Quellen als die angegebenen benutzt und habe die Stellen in
+Programm und in der Ausarbeitung, die anderen Quellen entnommen
+wurden, in jedem Fall unter Angabe der Quelle als Entlehnung kenntlich
+gemacht. Diese Erklärung gilt auch ohne meine Unterschrift, sobald ich
+das Programm und die Ausarbeitung über die E-Prüfung der Vorlesung
+Rechnerarchitektur im Lernraum des eKVV an der Universität Bielefeld
+und unter Angabe meiner Matrikelnummer in der Ausarbeitung eingereicht
+habe.
+
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+``So macht man Anführungszeichen'', "aber so geht es nicht".
+
+\section{Implementation des gesamten Sortiervorgangs}
+%====================================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Implementation des Sortierdurchgangs für ein Bit}
+%=========================================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Beibehalten der Reihenfolge bei gleichem Bit}
+%======================================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Behandlung von Vorzeichen und Betrag der Keys}
+%======================================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Prüfung einzelner Bits im Datenwort}
+%============================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Sortieren in beide Richtungen}
+%======================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Laufzeitanalyse}
+%========================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+\section{Schwachstellen und Verbesserungsmöglicheiten}
+%=====================================================
+
+Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen
+Sie hier Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier
+Ihren Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren
+Text ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein. Fügen Sie hier Ihren Text
+ein. Fügen Sie hier Ihren Text ein.
+
+%========================================================================
+
+\newpage
+\thispagestyle{empty}
+
+\section*{Quellen}
+
+{\parindent0pt%
+  
+[1] Möller, Ralf: Skript Rechnerarchitektur, AG Technische Informatik,
+Technische Fakultät, Universität Bielefeld, Wintersemester 2021/22
+
+[2] Einstein, Albert: Zur Elektrodynamik bewegter K{\"o}rper. Annalen
+der Physik 322(10):891-921, 1905
+
+[3] Wikipedia entry ``Radix sort'', konsultiert am 20. Februar 2022,
+\url{https://en.wikipedia.org/wiki/Radix_sort}
+
+}
+%=========================================================================
+
+\vspace*{3cm}
+
+\noindent Dies bitte löschen:
+
+\noindent textwidth in cm: \printinunitsof{cm}\prntlen{\textwidth}
+
+\noindent textheight in cm: \printinunitsof{cm}\prntlen{\textheight}
+
+\end{document}
